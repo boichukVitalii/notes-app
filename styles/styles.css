@@ -124,6 +124,26 @@ body {
     font-size: 14px;
 }
 
+.create-task-div {
+    display: flex;
+}
+
+.create-task-div label,
+.create-randomThought-div label,
+.create-idea-div label {
+    padding: 0 5px;
+}
+
+.create-randomThought-div {
+    display: flex;
+    margin-top: 4px;
+}
+
+.create-idea-div {
+    display: flex;
+    margin-top: 4px;
+}
+
 .create-textarea {
     resize: none;
     height: 75px;
@@ -152,3 +172,69 @@ body {
 .crt-submit-btn:hover {background: dodgerblue;}
 
 .crt-submit-btn:active {transform: translateY(1px);}
+
+.notes {}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding: 0 4px;
+    height: 48px;
+    background: #cfc5e4;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.note-columns {
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.note-columns:not(:first-child) {
+    color: #6b6b6b;
+}
+
+.button-panel {
+    padding-right: 10px;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.edit-button {
+    cursor: pointer;
+    padding-right: 4px;
+}
+
+.edit-button:hover {color: dodgerblue;}
+
+.edit-button:active,
+.archive-button:active,
+.delete-button:active
+{transform: translateY(1px);}
+
+.archive-button {
+    cursor: pointer;
+    padding-right: 4px;
+}
+
+.archive-button:hover {color: green;}
+
+.delete-button {
+    cursor: pointer;
+}
+
+.delete-button:hover {color: red;}
+
+.fall-form {
+    transition: all 0.5s ease;
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
