@@ -75,7 +75,7 @@ export const addNote = event => {
     deleteBtn.innerText = 'delete'
     buttonsPanel.appendChild(deleteBtn)
 
-    //Append to ul list
+    //Append to ul list (.'notes-list')
     const notesList = document.querySelector('.notes-list')
     notesList.appendChild(notesDiv)
 
@@ -88,3 +88,4 @@ export const addNote = event => {
     const createNoteBtn = document.querySelector('.create-btn')
     createNoteBtn.disabled = false
 }
+
