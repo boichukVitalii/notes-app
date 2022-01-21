@@ -1,5 +1,10 @@
-export const unarchiveNote = (note) => {
+import { countNotesByCategory } from './summary.js'
+
+export const unarchiveNote = note => {
     const unarchivedNote = note
+
+    countNotesByCategory(unarchivedNote, 'active', true)
+
     const notesList = document.querySelector('.notes-list')
     const removeBtn = unarchivedNote.childNodes[0].childNodes[5]
     const archiveBtn = document.createElement('span')

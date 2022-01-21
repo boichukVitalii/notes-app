@@ -1,10 +1,23 @@
 import { addNote } from './addNote.js'
+import { editNote } from './edit-note.js'
 
-export const createFormFunc = () => {
+export const createFormFunc = (e, note) => {
     const todoContainer = document.querySelector('.todo-container')
     const createNoteBtn = document.querySelector('.create-btn')
 
     createNoteBtn.disabled = true
+
+    try {
+        const editBtns = document.querySelectorAll('.edit-button')
+        editBtns.forEach(btn => btn.style.pointerEvents = 'none')
+        const archiveBtns = document.querySelectorAll('.archive-button')
+        archiveBtns.forEach(btn => btn.style.pointerEvents = 'none')
+        const unarchiveBtns = document.querySelectorAll('.unarchive-button')
+        unarchiveBtns.forEach(btn => btn.style.pointerEvents = 'none')
+        const deleteBtns = document.querySelectorAll('.delete-button')
+        deleteBtns.forEach(btn => btn.style.pointerEvents = 'none')
+    }
+    catch (ex) {}
 
     const createForm = document.createElement('form')
     createForm.classList.add('create-form')
@@ -14,6 +27,8 @@ export const createFormFunc = () => {
     createInputForm.classList.add('create-input')
     createInputForm.placeholder = 'Note name'
     createInputForm.required = true
+
+    if (note) createInputForm.value = note.childNodes[0].childNodes[0].innerText
     createForm.appendChild(createInputForm)
 
     const createRadioDiv = document.createElement('div')
@@ -83,6 +98,8 @@ export const createFormFunc = () => {
     createTextarea.classList.add('create-textarea')
     createForm.appendChild(createTextarea)
 
+    if (note) createTextarea.value = note.childNodes[0].childNodes[3].innerText
+
     const createSubmitBtn = document.createElement('button')
     createSubmitBtn.type = 'submit'
     const createSubmitBtnLabel = document.createTextNode('Submit')
@@ -92,5 +109,20 @@ export const createFormFunc = () => {
 
     todoContainer.appendChild(createForm)
 
-    createSubmitBtn.addEventListener('click', addNote)
+    if (note) {
+        try {
+            const radioBtns = document.querySelectorAll('input[name="category"]')
+            const catName = note.childNodes[0].childNodes[2].innerText
+            const button = Object.values(radioBtns).filter(btn => btn.value === catName)
+            button[0].checked = true
+        }
+        catch (ex) {} // No category choosen.
+    }
+
+    if (note) {
+        createSubmitBtn.addEventListener('click', event => { editNote(event, note) })
+    } else {
+        createSubmitBtn.addEventListener('click', addNote)
+    }
+
 }

@@ -68,10 +68,6 @@ body {
     border-radius: 4px;
 }
 
-.header-container:last-child {
-    justify-content: center;
-}
-
 .header-titles {
     font-size: 20px;
     font-family: 'Roboto Mono', monospace;
@@ -181,7 +177,6 @@ body {
 
 .note-item {
     display: flex;
-    justify-content: space-between;
     margin-top: 18px;
     padding: 0 4px;
     height: 48px;
@@ -193,15 +188,48 @@ body {
     align-items: center;
 }
 
-.note-columns {
+.note-column-name {
+    padding: 0 12px;
+    width: 190px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.note-column-created {
+    padding: 0 24px;
+    color: #6b6b6b;
     width: 200px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
 
-.note-columns:not(:first-child) {
+.note-column-category {
+    padding: 0 72px;
     color: #6b6b6b;
+    width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.note-column-content {
+    padding: 0 25px;
+    color: #6b6b6b;
+    width: 240px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.note-column-dates {
+    padding: 0 25px;
+    color: #6b6b6b;
+    width: 218px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .button-panel {
@@ -263,5 +291,50 @@ body {
     font-family: 'Roboto Mono', monospace;
     font-weight: 500;
     color: #f9f9f9;
-    text-align: center;
 }
+
+.archive-header-container {
+    display: flex;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 40px;
+    background: #a6a6a6;
+    border-radius: 4px;
+}
+
+.summary-container {
+    min-width: 100%;
+    margin: 70px 0 50px 0;
+}
+
+.category-name {
+    padding: 0 12px;
+}
+
+.task-active {
+    margin-left: 587px;
+}
+
+.task-archived {
+    margin-left: 525px;
+}
+
+.thought-active {
+    margin-left: 504px;
+}
+
+.thought-archived {
+    margin-left: 525px;
+}
+
+.idea-active {
+    margin-left: 587px;
+}
+
+.idea-archived {
+    margin-left: 525px;
+}
+
+
