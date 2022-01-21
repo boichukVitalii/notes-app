@@ -1,5 +1,5 @@
-import { formatDate } from './formattedDate.js'
-import { countNotesByCategory } from './summary.js'
+import { formatDate } from '../managment/formattedDate.js'
+import { countNotesByCategory } from '../summary-table/summary.js'
 
 export const addNote = event => {
     event.preventDefault()
@@ -101,4 +101,3 @@ export const addNote = event => {
 
     countNotesByCategory(notesDiv,'active')
 }
-

@@ -1,4 +1,4 @@
-import { countNotesByCategory } from './summary.js'
+import { countNotesByCategory } from '../summary-table/summary.js'
 
 export const unarchiveNote = note => {
     const unarchivedNote = note

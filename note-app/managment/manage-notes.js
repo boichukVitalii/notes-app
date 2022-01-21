@@ -1,7 +1,7 @@
 import { archiveNote } from './archive-note.js'
 import { deleteNote } from './delete-note.js'
 import { unarchiveNote } from './unarchive-note.js'
-import { createFormFunc } from './create-note-form.js'
+import { createFormFunc } from '../creation/create-note-form.js'
 
 export const manageNotes = e => {
     const item = e.target

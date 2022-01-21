@@ -1,5 +1,5 @@
 import { addNote } from './addNote.js'
-import { editNote } from './edit-note.js'
+import { editNote } from '../managment/edit-note.js'
 
 export const createFormFunc = (e, note) => {
     const todoContainer = document.querySelector('.todo-container')
@@ -124,5 +124,4 @@ export const createFormFunc = (e, note) => {
     } else {
         createSubmitBtn.addEventListener('click', addNote)
     }
-
 }
